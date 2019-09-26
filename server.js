@@ -3,6 +3,13 @@ const path = require('path');
 
 const app = express();
 
+app.get('/api',(req, res) =>{
+  res.send({
+    title: 'hello',
+    data: 'world'
+  });
+});
+
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('*', (req, res) => {
